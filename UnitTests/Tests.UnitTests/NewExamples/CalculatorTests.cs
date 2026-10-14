@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,7 +71,7 @@ public class CalculatorTests
     public void Divide_ByZero_ThrowsException()
     {
         var calculator = new Calculator();
-
+        new Mock
         var act = () => calculator.Divide(10, 0);
 
         act.Should()
